@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <title>WEB1 - welcome</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="color.js"></script>
+    <script src="ajax.js"></script>
+  </head>
+  <body>
+    <h1><a href="#welcome"onclick="textinner('ajax/WEB','#article')">WEB</a></h1>
+    <input id="nightday"type="button"value="night"onclick="
+      nightdayhandeler(this);">
+    <div id="grid">
+      <ol id="list"></ol>
+      <div id="article">
+        <script>
+          textinner('ajax/list','#list');
+          textinner('ajax/WEB','#article');
+          if(location.hash){
+            textinner(location.hash.substr(2,'#article'));
+          }else{
+            textinner('ajax/WEB','#article');
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
